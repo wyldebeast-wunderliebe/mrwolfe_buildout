@@ -1,0 +1,31 @@
+from mrwolfe.settings import *
+
+DEBUG = True
+LOGLEVEL = 'DEBUG'
+
+MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+INSTALLED_APPS += ("debug_toolbar", )
+
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+    'SHOW_TOOLBAR_CALLBACK': lambda x: True,
+    }
+    
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mrwolfe',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+        }
+    }
+
+import os
+if os.environ.get("DJANGO_TEST", "") == "1":
+    DATABASES['default']['ENGINE'] = "django.db.backends.sqlite3"
+    DATABASES['default']['NAME'] = "test"
+
+
+LOGGING['loggers']['mrwolfe']['level'] = 'DEBUG'

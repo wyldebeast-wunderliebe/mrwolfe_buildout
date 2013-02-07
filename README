@@ -1,0 +1,24 @@
+Mr.Wolfe buildout
+=================
+
+If you've never used buildout before, either go to
+http://www.buildout.org/ for an introduction, start experimenting
+without reading at your own peril, or just throw this stuff away and
+install Mr.Wolfe any way you want.
+
+This buildout config should enable you to get Mr.Wolfe up and running
+quite easily, provided you know how to use buildout in the first
+place.  The buildout creates an empty django app, called
+'mrwolfe-deploy', that is used for settings. This enables you to
+override the settings in the source. Creating your own settings is
+easy: copy the file settings-skel.py.in to, say
+'settings-my.py.in'. Override any settings you want. Copy
+buildout-skel.cfg to your own buildout config, and change the setting
+of '' accordingly:
+
+  [djangosettings]
+  input = settings-my.py.in
+
+Now run buildout, and there you go.  From there on, behavior is like
+any Django app, where the generated script './bin/django' is the same
+as the general 'manage.py'.
