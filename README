@@ -14,7 +14,7 @@ override the settings in the source. Creating your own settings is
 easy: copy the file settings-skel.py.in to, say
 'settings-my.py.in'. Override any settings you want. Copy
 buildout-skel.cfg to your own buildout config, and change the setting
-of '' accordingly:
+of 'djangosettings.input' accordingly:
 
   [djangosettings]
   input = settings-my.py.in
@@ -22,3 +22,7 @@ of '' accordingly:
 Now run buildout, and there you go.  From there on, behavior is like
 any Django app, where the generated script './bin/django' is the same
 as the general 'manage.py'.
+You may want to include other buildout stuff in your config file, like cron.cfg
+and logrotate.cfg, to take care of stuff you'll want to be taken care of in a
+production environment.
+
