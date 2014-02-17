@@ -1,31 +1,46 @@
 from mrwolfe.settings import *
 
-DEBUG = True
-LOGLEVEL = 'DEBUG'
+# This skeleton just provides some settings you are very likely to
+# change. Of course you can change everything from the settings.py
+# file.
+#
 
-MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-INSTALLED_APPS += ("debug_toolbar", )
-
-DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': lambda x: True,
-    }
-    
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mrwolfe',
-        'USER': 'root',
+        'USER': 'mrwolfe',
         'PASSWORD': '',
         'HOST': '',
         'PORT': '',
         }
     }
 
-import os
-if os.environ.get("DJANGO_TEST", "") == "1":
-    DATABASES['default']['ENGINE'] = "django.db.backends.sqlite3"
-    DATABASES['default']['NAME'] = "test"
+
+# BEGIN Mr.Wolfe settings
+#
+
+# This is the address of your actual site. Used for sending URL's of
+# issues to operators.
+#
+HOST_ADDRESS = "http://support.evilempire.com"
+
+DEFAULT_FROM_ADDR = "support@evilempire.com"
+
+#
+# END Mr.Wolfe settings
+
+# BEGIN Email settings
+#
+EMAIL_HOST = "smtp.evilempire.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "bobdobalina"
+EMAIL_HOST_PASSWORD = "verySekret" 
+EMAIL_USE_TLS = True
+#
+# END Email settings
 
 
 LOGGING['loggers']['mrwolfe']['level'] = 'DEBUG'
+LOGGING['handlers']['default']['filename'] = 'mrwolfe.log'

@@ -19,6 +19,8 @@ of 'djangosettings.input' accordingly:
   [djangosettings]
   input = settings-my.py.in
 
+You'll also need to determine what database you want to use, and add
+the egg to the dependencies.
 Now run buildout, and there you go.  From there on, behavior is like
 any Django app, where the generated script './bin/django' is the same
 as the general 'manage.py'.
