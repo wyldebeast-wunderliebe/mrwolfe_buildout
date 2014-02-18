@@ -9,6 +9,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         #'ENGINE': 'django.db.backends.mysql',
+        #'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'mrwolfe',
         'USER': 'mrwolfe',
         'PASSWORD': '',
@@ -44,3 +45,11 @@ EMAIL_USE_TLS = True
 
 LOGGING['loggers']['mrwolfe']['level'] = 'DEBUG'
 LOGGING['handlers']['default']['filename'] = 'mrwolfe.log'
+
+
+# BEGIN Open ID settings
+#
+# OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/id'
+# SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+#
+# END Open ID settings
