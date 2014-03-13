@@ -51,5 +51,7 @@ LOGGING['handlers']['default']['filename'] = 'mrwolfe.log'
 #
 # OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/id'
 # SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+# AUTHENTICATION_BACKENDS += ('django_openid_auth.auth.OpenIDBackend',)
+# INSTALLED_APPS += ('django_openid_auth',)
 #
 # END Open ID settings
