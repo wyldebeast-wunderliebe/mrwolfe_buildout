@@ -8,7 +8,7 @@ install Mr.Wolfe any way you want.
 
 This buildout config should enable you to get Mr.Wolfe up and running
 quite easily, provided you know how to use buildout in the first
-place.  The buildout creates an empty django app, called
+place. The buildout process creates an empty django app, called
 'mrwolfe-deploy', that is used for settings. This enables you to
 override the settings in the source. Creating your own settings is
 easy: copy the file settings-skel.py.in to, say
@@ -27,4 +27,3 @@ as the general 'manage.py'.
 You may want to include other buildout stuff in your config file, like cron.cfg
 and logrotate.cfg, to take care of stuff you'll want to be taken care of in a
 production environment.
-
