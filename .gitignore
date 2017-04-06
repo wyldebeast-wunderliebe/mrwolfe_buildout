@@ -1,1 +1,13 @@
-# Created by .ignore support plugin (hsz.mobi)
+.Python
+*.cfg
+bin/
+develop-eggs/
+eggs/
+mrwolfe
+mrwolfe-deploy/
+mrwolfe.log
+parts/
+pip-selfcheck.json
+settings-dvl.py.in
+src/
+VENV
